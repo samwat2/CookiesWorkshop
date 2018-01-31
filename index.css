@@ -1,3 +1,24 @@
+
+#cart {
+  height: 52px;
+  width: 57px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+#number-display {
+  height: 27px;
+  width: 27px;
+  position: absolute;
+  top: 2px;
+  right: -2px;
+}
+#item-count {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  color: white;
+}
 body, html {
 	height: 500%;
 	background-color: #d6c5c5;
@@ -46,7 +67,6 @@ header h1 {
 
 }
 nav a {
-	color: black;
 	display: inline-block;
 	opacity: 0.7;
   padding: 0 0.5em;
@@ -67,6 +87,3 @@ nav a:focus {
 #navigation-bar {
 	float: left;
 }
-
-
-
