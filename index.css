@@ -19,6 +19,16 @@
   color: white;
   font-size: 18px;
 }
+#list-items{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+}
+.add-button{
+  height: 20px;
+  width: 20px;
+  background: green;
+}
 body, html {
 	height: 150%;
 	background-color: #d6c5c5;
