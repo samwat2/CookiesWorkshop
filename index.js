@@ -6,13 +6,16 @@ class Store{
 		this.all_items = []
 	}
 	addStoreItem(item){
-		this.all_items.push(item)
+		this.all_items.push(item);
 	}
 	postStoreItems(){
 		for (var i = 0; i < this.all_items.length; i++) {
 			this.all_items[i];
 			$('#list-items').append('<div class="listing"  data-id="' + this.all_items[i].id + '"><img src="images/' + this.all_items[i].img +'" class="item-image"><div class"item-text">' + this.all_items[i].title + '</div><div class="item-price">' + this.all_items[i].price + '</div><div class="add-button"><button>ADD TO CART</button></div>');
 		}
+	}
+	getItemById(i){
+		return this.all_items[i];
 	}
 }
 
@@ -22,7 +25,19 @@ class ShoppingCart{
 	}
 	addToCart(new_item){
 		this.added_items.push(new_item);
-		Cookie.set('cart-items', JSON.stringify(this.added_items));
+		Cookies.set('cart-items', JSON.stringify(this.added_items));
+		cart_objects = JSON.parse(Cookies.get('cart-items'))
+		for (var i = 0; i < cart_objects.length; i++) {
+			cart_objects[i]
+			$('').append()
+			}
+		}
+	updateCount(){
+		var cart_array = JSON.parse(Cookies.get('cart-items'))
+		$('#item-count').html(cart_array.length)
+		if (cart_array.length > 9) {
+			$('#item-count').css('font-size', '12px')
+		}
 	}
 	removeCartItem(remove_item){
 		this.added_items = this.added_items.filter(kept => kept !== remove_item);
@@ -76,9 +91,14 @@ $(function(){
 	store.addStoreItem(mom);
 	store.postStoreItems();
 
+	shopping_cart.updateCount();
+
 	var add_button = $('.add-button');
 	add_button.on('click', function(){
-		shopping_cart.addToCart();
+		let item = store.getItemById($(this).parent().data('id'));
+		console.log(item)
+		shopping_cart.addToCart(item);
+		shopping_cart.updateCount();
 	});
 	// postItems();
 
