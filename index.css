@@ -2,25 +2,25 @@
 #cart {
   height: 52px;
   width: 57px;
-  position: absolute;
-  top: 50px;
-  right: 50px;
+  position: relative;
+  display: inline-block;
 }
 #number-display {
   height: 27px;
   width: 27px;
   position: absolute;
-  top: 2px;
-  right: -2px;
+  top: 0px;
+  right: -8px;
 }
 #item-count {
   position: absolute;
-  top: 7px;
-  right: 7px;
+  top: 1px;
+  right: -3px;
   color: white;
+  font-size: 18px;
 }
 body, html {
-	height: 500%;
+	height: 150%;
 	background-color: #d6c5c5;
   line-height: 1.4;
   font-weight: 500;
@@ -51,10 +51,10 @@ section span {
   font-weight: 700;
 }
 header {
-	width: 100%;
+  width: 100%;
   font-size: 140%;
   position: absolute;
-  top: 0px;
+  top: 67px;
   left: 0px;
   text-align: center;
   padding: 1em;
@@ -78,8 +78,9 @@ nav a:focus {
 }
 .sticky {
   position: fixed;
-  top: 0;
-  width: 100%
+  top: 4px;
+  right: -373px;
+  width: 100%;
 }
 .sticky + .content {
   padding-top: 102px;
