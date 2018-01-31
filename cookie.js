@@ -168,4 +168,5 @@
         exports.Cookies = cookiesExport;
     } else {
         global.Cookies = cookiesExport;
+    }
 })(typeof window === 'undefined' ? this : window);
