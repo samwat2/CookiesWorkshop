@@ -1,3 +1,4 @@
+
 // cart function
 // var all_items = [[,'Post something on trumps Twitter','$4650']];
 // var added_items = [];
@@ -24,4 +25,3 @@ $(function(){
 		updateCount();
 	});
 });
-	

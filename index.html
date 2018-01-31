@@ -1,24 +1,37 @@
-<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Cookies</title>
-		<link rel="stylesheet" href="index.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="cookie.js"></script>
-		<script src="index.js"></script>
-	</head>
-	<body>
-		<!-- start cart -->
-		<div id="cart">
-			<div>
-				<img src="images/cart.svg"  alt="">
-			</div>
-			<div id="number-display-wrapper">
-				<img src="images/red-number-display.svg" id="number-display" alt="">
-				<div id="item-count">0</div>
-			</div>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookies</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="cookies.js"></script>
+	<script src="index.js"></script>
+</head>
+<body>
+	<header> <!-- start of header -->
+		<section>
+				<span href="#">Rent A Hacker</span> <!-- Name of Website -->
+		</section>
+		<div class="top-of-page"> <!-- header -->
+				<nav id="navigation-bar" class="sticky"> <!-- navigation -->
+					<a href="#"> Search </a>  
+					<a href="#"> My Account </a>	
+                <!-- start cart -->
+          <div id="cart">
+            <div>
+              <img src="images/cart.svg"  alt="">
+            </div>
+            <div id="number-display-wrapper">
+              <img src="images/red-number-display.svg" id="number-display" alt="">
+              <div id="item-count">0</div>
+            </div>
+          </div>
+          <!-- end cart -->
+					<h1 id="name-of-website">R.A.H</h1>  <!-- LogoName -->
+				</nav>
 		</div>
-		<!-- end cart -->
-	</body>
-	</html>
+	</header> <!-- end of header -->
+	<div class="content"></div>
+</body>
+</html>
