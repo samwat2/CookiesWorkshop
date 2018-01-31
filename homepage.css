@@ -37,7 +37,7 @@ body:hover {
 .top-of-page{
 	font-weight: 100;
 	letter-spacing: 4px;
-	position: absolute;
+	position: relative;
 	left: 450px;
 	top: 50px;
 	box-sizing: border-box;
@@ -100,3 +100,18 @@ nav a:focus {
 	float: left;
 }
 /*END OF HEADER*/
+
+/*CONTENT*/
+
+#list-items {
+  letter-spacing: 8px;
+  font-weight: 700;
+  font-size: 29px;
+  position: relative;
+  top: 12%;
+  display: inline-block;
+}
+.add-button {
+  font-size: 20px; 
+}
+

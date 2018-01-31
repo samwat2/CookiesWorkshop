@@ -11,7 +11,7 @@ class Store{
 	postStoreItems(){
 		for (var i = 0; i < this.all_items.length; i++) {
 			this.all_items[i];
-			$('#list-items').append('<div class="listing"  data-id="' + this.all_items[i].id + '"><img src="images/' + this.all_items[i].img +'" class="item-image"><div class"item-text">' + this.all_items[i].title + '</div><div class="item-price">' + this.all_items[i].price + '</div><div class="add-button"></div>');
+			$('#list-items').append('<div class="listing"  data-id="' + this.all_items[i].id + '"><img src="images/' + this.all_items[i].img +'" class="item-image"><div class"item-text">' + this.all_items[i].title + '</div><div class="item-price">' + this.all_items[i].price + '</div><div class="add-button"><button>ADD TO CART</button></div>');
 		}
 	}
 }
