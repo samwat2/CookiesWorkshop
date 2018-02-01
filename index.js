@@ -3,7 +3,7 @@
 
 class Store{
 	constructor(){
-		this.all_items = []
+		this.all_items = [];
 	}
 	addStoreItem(item){
 		this.all_items.push(item);
@@ -15,7 +15,7 @@ class Store{
 		}
 	}
 	getItemById(i){
-		return this.all_items[i];
+		return this.all_items.filter(items => items.id === i);
 	}
 }
 
@@ -26,17 +26,22 @@ class ShoppingCart{
 	addToCart(new_item){
 		this.added_items.push(new_item);
 		Cookies.set('cart-items', JSON.stringify(this.added_items));
-		cart_objects = JSON.parse(Cookies.get('cart-items'))
+		var cart_objects = JSON.parse(Cookies.get('cart-items'));
 		for (var i = 0; i < cart_objects.length; i++) {
-			cart_objects[i]
-			$('').append()
+			cart_objects[i];
+			$('').append();
 			}
 		}
 	updateCount(){
-		var cart_array = JSON.parse(Cookies.get('cart-items'))
-		$('#item-count').html(cart_array.length)
+		if (Cookies.get('cart-items') === undefined) {
+			Cookies.set('cart-items', '[]');
+		}
+		var cart_array = JSON.parse(Cookies.get('cart-items'));
+		$('#item-count').html(cart_array.length);
 		if (cart_array.length > 9) {
-			$('#item-count').css('font-size', '12px')
+			$('#item-count').css('font-size', '12px');
+			$('#item-count').css('top', '5px');
+			$('#item-count').css('right', '-6px');
 		}
 	}
 	removeCartItem(remove_item){
@@ -78,24 +83,8 @@ class Item{
 // }
 
 
-$(function(){
-	var store = new Store();
-	var shopping_cart = new ShoppingCart();
-
-	
-	store.addStoreItem(trump);
-	store.addStoreItem(hillary);
-	store.addStoreItem(mom);
-	store.postStoreItems();
 
 
-	var add_button = $('.add-button');
-	add_button.on('click', function(){
-		let item = store.getItemById($(this).parent().data('id'));
-		console.log(item)
-		shopping_cart.addToCart(item);
-		shopping_cart.updateCount();
-	});
 	// postItems();
 
 	// var cart = $('#cart');
@@ -119,4 +108,3 @@ $(function(){
 	// 	getCount();
 	// 	updateCount();
 	// });
-});
