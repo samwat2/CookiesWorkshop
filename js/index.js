@@ -11,7 +11,7 @@ class Store{
 	postStoreItems(){
 		for (var i = 0; i < this.all_items.length; i++) {
 			this.all_items[i];
-			$('#list-items').append('<div class="listing"  data-id="' + this.all_items[i].id + '"><img src="images/' + this.all_items[i].img +'" class="item-image"><div class"item-text">' + this.all_items[i].title + '</div><div class="item-price">' + this.all_items[i].price + '</div><div class="add-button"><button>ADD TO CART</button></div>');
+			$('#list-items').append('<div class="listing"  data-id="' + this.all_items[i].id + '"><img src="images/' + this.all_items[i].img +'" class="item-image"><div class="item-text">' + this.all_items[i].title + '</div><div class="item-price">' + this.all_items[i].price + '</div><div><button class="add-button">ADD TO CART</button></div>');
 		}
 	}
 	getItemById(id){
@@ -27,16 +27,21 @@ class ShoppingCart{
 		//console.log(this.added_items);
 		//console.log(this.added_items = JSON.stringify(Cookies.get(this.added_items))); //|| [];
 		//this.added_items = JSON.parse(Cookies.get('cart-items')); //|| [];
-		if (JSON.parse(Cookies.get('cart-items')) === undefined){
-		this.added_items = [];
-		}else{
-			this.added_items = JSON.stringify(Cookies.get('cart-items'))
-			this.added_items = JSON.parse(Cookies.get('cart-items'));
-		}
+		// console.log(JSON.stringify(Cookies.get('cart-items')))
+		// console.log(JSON.parse(Cookies.get('cart-items')))
+		var cart_items = Cookies.get('cart-items');
+		this.added_items = cart_items ? JSON.parse(cart_items) : [];
+		// JSON.stringify(Cookies.get('cart-items'))
+		// if (JSON.parse(Cookies.get('cart-items')) === undefined){
+		// this.added_items = [];
+		// }else{
+		// 	this.added_items = JSON.stringify(Cookies.get('cart-items'))
+		// 	this.added_items = JSON.parse(Cookies.get('cart-items'));
+		// }
 	}
-	getItemById(id){
-		return this.added_items.filter(item => item.id === id);
-	}
+	// getItemById(id){
+		// return this.added_items.filter(item => item.id === id);
+	// }
 	addToCart(new_item){
 		this.added_items.push(new_item);
 		Cookies.set('cart-items', JSON.stringify(this.added_items));
@@ -48,7 +53,7 @@ class ShoppingCart{
 		console.log(account_objects)
 		for (var i = 0; i < account_objects.length; i++) {
 			console.log(account_objects[i][0])
-			$('.selected-items').append('<div data-id="' + account_objects[i][0].id + '"><tr><th>Action: </th><th>' + account_objects[i][0].title + '</th><th>Price: ' + account_objects[i][0].price + '</th></tr></div>'); //<button class="remove-item"></button>
+			$('.selected-items').append('<div data-id="' + account_objects[i][0].id + '"><tr><th>Action: </th><th>' + account_objects[i][0].title + '</th><th>-------Price: ' + account_objects[i][0].price + '</th></tr></div>'); //<button class="remove-item"></button>
 
 		}
 	}
@@ -72,6 +77,8 @@ class ShoppingCart{
 	}
 	removeAllItems(){
 		Cookies.set('cart-items', '[]'); //, { path: '/' }
+		$('.selected-items').css('display', 'none'); //<button class="remove-item"></button>
+
 	}
 }
 

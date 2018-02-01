@@ -19,6 +19,14 @@
   color: white;
   font-size: 18px;
 }
+.item-image {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  top: 10px;
+  left: 11px;
+  border-radius: 15px;
+}
 body, html {
 	height: 150%;
   background-color: #baa0a0;
@@ -113,5 +121,24 @@ nav a:focus {
 }
 .add-button {
   font-size: 20px; 
+}
+.listing {
+  margin-top: 35px;
+  margin-left: 20px;
+  background-color: #BFADAC;
+  border-radius: 14px;
+}
+.item-text{
+  margin-left: 10px;
+}
+.item-price{
+  position: relative;
+  left: 677px;
+  bottom: -18px;
+}
+.add-button{
+  position: relative;
+  bottom: 180px;
+  left: 634px;
 }
 
